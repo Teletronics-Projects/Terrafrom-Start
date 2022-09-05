@@ -38,6 +38,12 @@ resource "azurerm_subnet" "vm-1-subnet1" {
   virtual_network_name = azurerm_virtual_network.vm1-vnet.name
   address_prefixes     = ["10.0.2.0/24"]
 }
+resource "azurerm_subnet" "vm-1-subnet2" {
+  name                 = "subnet2"
+  resource_group_name  = azurerm_resource_group.TFA.name
+  virtual_network_name = azurerm_virtual_network.vm1-vnet.name
+  address_prefixes     = ["10.0.4.0/24"]
+}
 
 resource "azurerm_network_interface" "vm1-nic1" {
   name                = "vm1-nic1"
